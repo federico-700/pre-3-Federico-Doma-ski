@@ -1,8 +1,17 @@
 # Coderhouse
 
-## Autor
+## Profesor
 
 Nombre: Esteban Acevedo
 [Linkedin](linkedin.com/in/esteban-acevedo-aberastain)
 
-## El proyecto
+## Profesor
+
+Tutor: Nicolas Dziuma
+
+## Alumno
+
+Nombre: Federico Domañski
+
+
+
