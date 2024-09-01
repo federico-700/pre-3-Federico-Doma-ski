@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+    Ofertas: Lista de ofertas
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+
+
+
+
+<form action="{% url 'ofertas:ofertas_list' %}" method="get">
+    <input type="text" name="q" id=""  placeholder="buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+    <div>
+        {% for object in ofertas %}
+            <p>
+                {{ object }}
+            </p>         
+        {% empty %}
+        <p>
+            No hay registro
+        </p>    
+        {% endfor %}
+    </div>
+    <button><a href="{% url 'ofertas:index' %}">Volver</a></button>
+{% endblock main %}

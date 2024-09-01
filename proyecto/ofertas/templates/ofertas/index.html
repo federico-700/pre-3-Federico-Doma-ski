@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+  Ofertas
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+<div>
+  <img style="width: 100%; height: 50vh; margin-top: 10vh;" src="https://cdn2.melodijolola.com/media/files/field/image/frutas.jpg" alt="">
+</div>
+
+
+
+  <button><a href="{% url 'ofertas:ofertas_list' %}">Lista de ofertas</a></button> 
+  <button><a href="{% url 'ofertas:ofertas_create' %}">Crear registro</a></button> 
+    
+{% endblock main %}

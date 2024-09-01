@@ -1,0 +1,39 @@
+#nueva version
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+    Sucursales: Lista de sucursales
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+
+<form action="{% url 'sucursales:sucursales_list' %}" method="get">
+    <input type="text" name="q" id=""  placeholder="buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+
+
+    <div>
+        {% for object in sucursales %}
+            <p>
+                {{ object }}
+            </p>    
+        {% empty %}
+            <p>
+                No hay registro
+            </p> 
+        {% endfor %}
+    </div>
+    <button><a href="{% url 'sucursales:index' %}">Volver</a></button>
+{% endblock main %}
+
+
+###########################

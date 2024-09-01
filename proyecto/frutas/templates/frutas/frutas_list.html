@@ -1,0 +1,43 @@
+#nueva version
+{% extends 'core/base.html' %}
+
+{% block header %}
+
+<h1 style="color:forestgreen; text-align: center;">
+    Frutas: Lista de frutas
+</h1>
+
+
+{% endblock header %}
+
+{% block main %}
+
+
+
+
+<form action="{% url 'frutas:frutas_list' %}" method="get">
+    <input type="text" name="q" id=""  placeholder="buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+
+
+    <div>
+        {% for object in frutas %}
+            <p>
+                {{ object }}
+            </p>    
+        {% empty %}
+            <p>
+                No hay registro
+            </p> 
+        {% endfor %}
+    </div>
+    <button><a href="{% url 'frutas:index' %}">Volver</a></button>
+{% endblock main %}
+
+
+###########################
+

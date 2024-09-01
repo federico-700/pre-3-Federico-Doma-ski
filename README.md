@@ -1,1 +1,8 @@
-# pre-3-Federico-Doma-ski
+# Coderhouse
+
+## Autor
+
+Nombre: Esteban Acevedo
+[Linkedin](linkedin.com/in/esteban-acevedo-aberastain)
+
+## El proyecto

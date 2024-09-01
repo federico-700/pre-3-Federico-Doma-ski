@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+  Verduras
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+<div>
+  <img style="width: 100%; height: 50vh; margin-top: 10vh;" src="https://bolcereales.com.ar/wp-content/uploads/2020/08/verduras1.jpg" alt="">
+</div>
+
+
+
+  <button><a href="{% url 'verduras:verduras_list' %}">Lista de verduras</a></button> 
+  <button><a href="{% url 'verduras:verduras_create' %}">Crear registro</a></button> 
+    
+{% endblock main %}
+
+
+
+
+<h1 style="color:forestgreen; text-align: center;">
+  Frutas
+</h1>

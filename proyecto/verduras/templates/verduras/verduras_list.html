@@ -1,0 +1,38 @@
+#nueva version
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+    Verduras: Lista de verduras
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+
+
+
+<form action="{% url 'verduras:verduras_list' %}" method="get">
+    <input type="text" name="q" id=""  placeholder="buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+
+
+    <div>
+        {% for object in verduras %}
+            <p>
+                {{ object }}
+            </p>    
+        {% empty %}
+            <p>
+                No hay registro
+            </p> 
+        {% endfor %}
+    </div>
+    <button><a href="{% url 'verduras:index' %}">Volver</a></button>
+{% endblock main %}

@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+    Ofertas: Creacion de ofertas
+</h1>
+
+
+{% endblock header %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Enviar </button>
+
+
+
+    </form>
+
+   
+
+
+    <button>
+        <a href="{% url 'ofertas:index' %}">Volver</a>
+    </button>
+
+
+
+
+{% endblock main %}
