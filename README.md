@@ -34,7 +34,7 @@ VerduleriaTech permite a los usuarios navegar a través de diferentes secciones 
 http://127.0.0.1:8000/admin/
 
 Nombre de usuario
-Admin1
+admin
 
 Contraseña
 123

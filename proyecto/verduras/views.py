@@ -9,23 +9,6 @@ def index(request):
 
 
 
-
-
-
-
-
-
-
-
-#original, funciona
-#def ofertas_list(request):
-#    ofertas=Ofertas.objects.all()
-#    contexto ={ 'ofertas':ofertas}
-#    return render(request, 'ofertas/ofertas_list.html',contexto)
-
-
-
-
 #nueva version
 def verduras_list(request):
     query = request.GET.get('q')
@@ -56,17 +39,3 @@ def verduras_create(request):
     return render(request, 'verduras/verduras_create.html',{"form":form})
 
 
-
-
-#def ofertas_create(request):
-#    if request.method == 'GET':
-#        form= OfertasForm()
-#    
-#    if request.method == "POST":
-#        form = OfertasForm(request.POST)
-#        if form.is_valid():
-#            print(form.cleaned_data)
-#            form.save()
-#            return redirect("ofertas:ofertas_list")
-#    
-#    return render(request, 'ofertas/ofertas_create.html',{"form":form})

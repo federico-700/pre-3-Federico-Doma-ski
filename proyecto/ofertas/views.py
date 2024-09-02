@@ -8,14 +8,6 @@ def index(request):
     return render(request, 'ofertas/index.html')
 
 
-#original, funciona
-#def ofertas_list(request):
-#    ofertas=Ofertas.objects.all()
-#    contexto ={ 'ofertas':ofertas}
-#    return render(request, 'ofertas/ofertas_list.html',contexto)
-
-
-
 
 #nueva version
 def ofertas_list(request):
@@ -26,22 +18,6 @@ def ofertas_list(request):
         ofertas=Ofertas.objects.all()
     contexto ={ 'ofertas':ofertas}
     return render(request, 'ofertas/ofertas_list.html',contexto)
-
-
-
-
-
-
-
-
-#def pais_list(request):
-#    query = request.GET.get('q')
-#    if query:
-#        paises = Pais.objects.filter(nombre__icontains=query)
-#    else :
-#        paises = Pais.objects.all()
-##    contexto = {'paises': paises}
-#    return render(request, 'clientes/pais_list.html', contexto)
 
 
 
