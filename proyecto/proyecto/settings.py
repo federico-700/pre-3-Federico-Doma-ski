@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'verduras',
     'sucursales',
     'game',
+    'producto',
 
 ]
 
