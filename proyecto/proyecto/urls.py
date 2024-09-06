@@ -25,6 +25,9 @@ urlpatterns = [
     path('frutas/', include('frutas.urls')),
     path('verduras/', include('verduras.urls')),
     path('sucursales/', include('sucursales.urls')),
+    path('producto/', include('producto.urls')),
+    path('game/', include('game.urls')),
+
 
 
    # path('ofertas/', include('sucursales.urls')),

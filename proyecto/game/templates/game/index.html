@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+
+<h1 style="color:forestgreen; text-align: center;">
+ {{premio}}
+</h1>
+
+
+
+
+{% endblock header %}
+
+{% block main %}
+
+
+<div>
+
+  {% if "30%" in premio %}
+
+  <img style="width: 100%; height: 50vh; margin-top: 10vh;" src="https://i.pinimg.com/originals/2a/15/bf/2a15bfef34c0c7e2fd03500bebe11025.gif" alt="">
+
+  {% elif "50%" in premio %}
+
+  <img style="width: 100%; height: 50vh; margin-top: 10vh;" src="https://i.pinimg.com/originals/11/bc/3f/11bc3fc5e65be4046d44ea2ae794393a.gif" alt="">
+
+  {% elif "participando" in premio %}
+
+  <img style="width: 100%; height: 50vh; margin-top: 10vh;" src="https://media1.tenor.com/m/NnxQfaka0nYAAAAd/no-god-no-god-please-no.gif" alt="">
+
+
+
+  {% elif "compras" in premio %}
+
+  <img style="width: 100%; height: 50vh; margin-top: 10vh;" src="https://elnoti.com/wp-content/uploads/2016/08/milllonario-1.gif" alt="">
+
+
+
+
+
+
+  {% else %}
+  <img style="width: 100%; height: 50vh; margin-top: 10vh;" src="https://bolcereales.com.ar/wp-content/uploads/2020/08/verduras1.jpg" alt="">
+
+  {% endif %}
+
+
+
+
+
+</div>
+<p>
+
+</p>
+
+
+
+{% endblock main %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

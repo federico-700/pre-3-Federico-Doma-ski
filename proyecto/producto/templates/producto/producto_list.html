@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+    Productos: Lista de productos
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+
+
+
+
+<form action="{% url 'producto:producto_list' %}" method="get">
+    <input type="text" name="q" id=""  placeholder="buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+    <div>
+        {% for object in producto %}
+            {% if object.tipo_producto == 'FRUTA' %}
+                
+                
+                <p>
+                    {{ object }}
+                </p>
+            {% endif %}       
+        {% empty %}
+        <p>
+            No hay registro
+        </p>    
+        {% endfor %}
+    </div>
+    <button><a href="{% url 'producto:index' %}">Volver</a></button>
+{% endblock main %}
