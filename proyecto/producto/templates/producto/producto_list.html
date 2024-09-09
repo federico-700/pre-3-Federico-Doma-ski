@@ -24,10 +24,10 @@
     <div>
         {% for object in producto %}
             {% if object.tipo_producto == 'FRUTA' %}
-                
-                
+
                 <p>
                     {{ object }}
+                    <a href="{% url 'producto:producto_detalle' object.id %}">Detalle</a>
                 </p>
             {% endif %}       
         {% empty %}

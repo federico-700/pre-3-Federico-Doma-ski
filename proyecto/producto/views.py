@@ -23,28 +23,10 @@ def producto_list(request):
     return render(request, 'producto/producto_list.html',contexto)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def producto_detalle(request, pk:int):
+    query = Producto.objects.get(id=pk)
+    context = {'object': query}
+    return render(request, 'producto/producto_detalle.html', context)
 
 
 

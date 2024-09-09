@@ -10,6 +10,8 @@ class Producto(models.Model):
     kilo_producto = models.DecimalField(max_digits=10, decimal_places=2)
     stock_producto = models.DecimalField(max_digits=10, decimal_places=2)
     tipo_producto = models.CharField(max_length=20, choices=Tipo_producto.choices)
+    detalle_producto = models.TextField(blank=True, null=True)
+
 
 
     
