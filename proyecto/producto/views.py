@@ -30,6 +30,36 @@ def producto_detalle(request, pk:int):
 
 
 
+def producto_beneficio(request, pk:int):
+    query = Producto.objects.get(id=pk)
+    context = {'object': query}
+    return render(request, 'producto/producto_beneficio.html', context)
+
+
+
+
+
+
+
+def producto_update(request,pk:int):
+    query = Producto.objects.get(id=pk)
+    if request.method == 'GET':
+        form= ProductoForm(instance=query)
+    
+    if request.method == "POST":
+        form = ProductoForm(request.POST, instance=query)
+        if form.is_valid():
+            form.save()
+            return redirect("producto:producto_list")
+    
+    return render(request, 'producto/producto_create.html',{"form":form})
+
+
+
+
+
+
+
 
 def producto_create(request):
     if request.method == 'GET':

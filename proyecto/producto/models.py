@@ -3,7 +3,7 @@ from django.db import models
 class Producto(models.Model):
     class Tipo_producto(models.TextChoices):
         Fruta = "FRUTA", "Fruta"
-        VERDURA = "VERDURA", "verdura"
+        VERDURA = "VERDURA", "Verdura"
         OFERTA = "OFERTA", "Oferta"
     nombre_producto = models.CharField(max_length=100)
     precio_producto = models.DecimalField(max_digits=10, decimal_places=2)
@@ -11,6 +11,7 @@ class Producto(models.Model):
     stock_producto = models.DecimalField(max_digits=10, decimal_places=2)
     tipo_producto = models.CharField(max_length=20, choices=Tipo_producto.choices)
     detalle_producto = models.TextField(blank=True, null=True)
+    beneficio_producto = models.TextField(blank=True, null=True)
 
 
 
