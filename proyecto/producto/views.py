@@ -37,10 +37,6 @@ def producto_beneficio(request, pk:int):
 
 
 
-
-
-
-
 def producto_update(request,pk:int):
     query = Producto.objects.get(id=pk)
     if request.method == 'GET':
@@ -53,6 +49,21 @@ def producto_update(request,pk:int):
             return redirect("producto:producto_list")
     
     return render(request, 'producto/producto_create.html',{"form":form})
+
+
+
+def producto_delete(request,pk:int):
+    query = Producto.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("producto:producto_list")
+    return render(request, 'producto/producto_confirm_delete.html',{'object':query})
+   
+
+
+
+
+
 
 
 

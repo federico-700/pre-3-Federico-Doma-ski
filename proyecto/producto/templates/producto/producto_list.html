@@ -30,6 +30,8 @@
                     <a href="{% url 'producto:producto_detalle' object.id %}">Detalle</a>
                     <a href="{% url 'producto:producto_beneficio' object.id %}">Beneficios</a>
                     <a href="{% url 'producto:producto_update' object.id %}">Cambiar</a>
+                    <a href="{% url 'producto:producto_delete' object.id %}">Borrar</a>
+
                 </p>
             {% endif %}       
         {% empty %}
