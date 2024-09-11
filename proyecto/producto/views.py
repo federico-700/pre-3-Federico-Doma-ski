@@ -1,18 +1,23 @@
-from django.shortcuts import render
-
 # Create your views here.
 from django.shortcuts import render, redirect
-
-
 from .models import Producto
 from .forms import ProductoForm
+from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+
+
+
+#***** INDEX
 
 def index(request):
     return render(request, 'producto/index.html')
 
 
 
-#nueva version
+#***** NUEVA VERSION
+
+#***** LIST
 def producto_list(request):
     query = request.GET.get('q')
     if query:
@@ -23,19 +28,7 @@ def producto_list(request):
     return render(request, 'producto/producto_list.html',contexto)
 
 
-def producto_detalle(request, pk:int):
-    query = Producto.objects.get(id=pk)
-    context = {'object': query}
-    return render(request, 'producto/producto_detalle.html', context)
-
-
-
-def producto_beneficio(request, pk:int):
-    query = Producto.objects.get(id=pk)
-    context = {'object': query}
-    return render(request, 'producto/producto_beneficio.html', context)
-
-
+# ***** UPDATE
 
 def producto_update(request,pk:int):
     query = Producto.objects.get(id=pk)
@@ -52,26 +45,8 @@ def producto_update(request,pk:int):
 
 
 
-def producto_delete(request,pk:int):
-    query = Producto.objects.get(id=pk)
-    if request.method == "POST":
-        query.delete()
-        return redirect("producto:producto_list")
-    return render(request, 'producto/producto_confirm_delete.html',{'object':query})
-   
 
-
-
-
-
-
-
-
-
-
-
-
-
+#***** CREATE
 def producto_create(request):
     if request.method == 'GET':
         form= ProductoForm()
@@ -84,3 +59,26 @@ def producto_create(request):
             return redirect("producto:producto_list")
     
     return render(request, 'producto/producto_create.html',{"form":form})
+
+
+
+
+#***** PRODUCTO BENEFICIO  
+
+class ProductoBeneficio(DetailView):
+    model = Producto
+    template_name = 'producto/producto_beneficio.html'
+
+
+#***** PRODUCTO DELETE 
+
+class ProductoDelete(DeleteView):
+    model = Producto
+    success_url = reverse_lazy('producto:producto_list')
+
+
+
+#***** DETAIL (DETALLES)
+class ProductoDetail(DetailView):
+    model = Producto
+    template_name = 'producto/producto_detalle.html'
