@@ -2,42 +2,25 @@
 
     <button><a href="{% url 'core:index' %}">🏡Home</a></button>
 
-    {% if user.is_authenticated %}
-        
-  
+    {% if user.is_authenticated %}   
+        <button><a href="{% url 'frutas:index' %}">🍓Frutas</a></button>
+        <button><a href="{% url 'verduras:index' %}">🥦Verduras</a></button>
+        <button><a href="{% url 'ofertas:index' %}">🍋Ofertas</a></button>
+        <button><a href="{% url 'sucursales:index' %}">🍉Sucursales</a></buton>
+        <button><a href="{% url 'producto:index' %}">🍎Producto</a></buton>
+        <button><a href="{% url 'game:index' %}">🎮Game</a></buton>
 
+        <a href="{% url 'core:profile' %}"> 
+            <button> 😀 Usuario: {{ user.username }}</button></a>
 
-
-
-
-    <button><a href="{% url 'frutas:index' %}">🍓Frutas</a></button>
-    <button><a href="{% url 'verduras:index' %}">🥦Verduras</a></button>
-    <button><a href="{% url 'ofertas:index' %}">🍋Ofertas</a></button>
-    <button><a href="{% url 'sucursales:index' %}">🍉Sucursales</a></buton>
-    <button><a href="{% url 'producto:index' %}">🍎Producto</a></buton>
-
-
-    <button><a href="{% url 'game:index' %}">🎮Game</a></buton>
-
-
-
-    <button><a href="#">😀 Usuario: {{ user.username }}</a></button>
-
-
- 
-    <form action="{% url 'core:logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">😾Logout</button>
-    </form>
-
-
-
-
-
+        <form action="{% url 'core:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">😾Logout</button>
+        </form>
 
 
     {% else %}
-    <button><a href="{% url 'core:login' %}">😃Login</a></button>
+        <button><a href="{% url 'core:login' %}">😃Login</a></button>
 
     {% endif %}
 </navbar>
