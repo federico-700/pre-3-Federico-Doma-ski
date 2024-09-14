@@ -13,6 +13,15 @@
         <a href="{% url 'core:profile' %}"> 
             <button> 😀 Usuario: {{ user.username }}</button></a>
 
+        </a>
+        {% if user.vendedor.avatar %}
+            <img src="{{ user.vendedor.avatar.url }}"
+                 alt="avatar"
+                 style="height: 40px" /></a>
+        {% endif %}
+
+
+
         <form action="{% url 'core:logout' %}" method="post">
             {% csrf_token %}
             <button type="submit">😾Logout</button>

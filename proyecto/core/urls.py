@@ -2,6 +2,7 @@ from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 
 from . import views
+from django. contrib.staticfiles.urls import staticfiles_urlpatterns
 
 app_name = 'core'
 
@@ -12,3 +13,5 @@ urlpatterns = [
     path('register',views.Register.as_view(), name='register'),
     path('profile',views.Profile.as_view(),name='profile'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

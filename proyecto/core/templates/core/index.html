@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 
 {% block header %}
@@ -9,7 +10,7 @@
 
 {% block main %}
    <div>
-        <img style="width: 100%; height: 50vh; margin-top:10%;" src="https://eatrightnj.org/wp-content/uploads/2023/02/Heart-Health-Month-pic-1024x555.jpg" alt="">
+        <img style="width: 100%; height: 50vh; margin-top:10%;" src="{% static 'core/img/foto_principal.jpg' %}" alt="">
    </div>
 {% endblock main %}
 

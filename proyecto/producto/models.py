@@ -14,7 +14,23 @@ class Producto(models.Model):
     beneficio_producto = models.TextField(blank=True, null=True)
 
 
-
-    
     def __str__(self):
         return f'{self.nombre_producto}, {self.kilo_producto} kilo,{self.precio_producto} pesos, stock disponible {self.stock_producto} kilos {self.tipo_producto}'
+
+    
+
+    def disminuir_stock(self, cantidad):
+        """cantidad es enviado desde el modelo Venta"""
+        if self.stock_producto >= cantidad:
+            self.stock_producto -= cantidad
+            self.save()
+        else:
+            raise ValueError('No hay suficiente stock disponible')
+
+    def aumentar_stock(self, cantidad):
+        self.stock_producto += cantidad
+        self.save()
+
+
+
+    

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'sucursales',
     'game',
     'producto',
+    'ventas',
 
 ]
 
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -136,3 +137,10 @@ LOGIN_URL = reverse_lazy('core:login')              # URL de la pagina de inicio
 LOGIN_REDIRECT_URL = reverse_lazy('core:index')     # URL a la que se redirige despues del inicio de sesion
 
 
+
+
+
+# MEDIA_ROOT sirve para indicar la ruta donde se almacenarán los archivos multimedia
+MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_URL indica la URL pública desde donde se podrán acceder a los archivos multimedia
+MEDIA_URL = '/media/'
