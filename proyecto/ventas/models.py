@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.db import models
 
+from decimal import Decimal
 
 class Vendedor(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name='vendedor')
@@ -45,7 +46,11 @@ class Venta(models.Model):
             )
 
     def save(self, *args, **kwargs):
-        self.precio_total = self.producto.precio_producto * self.cantidad
+        if self.cantidad >= 10:
+            self.precio_total = self.producto.precio_producto *Decimal('0.8')* self.cantidad
+        else:
+            self.precio_total = self.producto.precio_producto*self.cantidad
+
         self.producto.disminuir_stock(self.cantidad)
         super().save(*args, **kwargs)
 
