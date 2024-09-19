@@ -18,6 +18,14 @@
             <img src="{{ user.vendedor.avatar.url }}"
                  alt="avatar"
                  style="height: 40px" /></a>
+
+
+        {% elif user.comprador.avatar %}
+            <img src="{{ user.comprador.avatar.url }}"
+                 alt="avatar comprador"
+                 style="height: 40px" />
+        
+        
         {% endif %}
 
 

@@ -18,8 +18,57 @@ class Vendedor(models.Model):
         verbose_name_plural = 'Vendedores'
 
 
+
+
+
+
+
+######################33
+#prueba
+
+
+class Comprador(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name='comprador')
+    celular = models.CharField(max_length=50, blank=True, null=True)
+    avatar = models.ImageField(upload_to='avatares', blank=True, null=True)
+
+
+    class Meta:
+        verbose_name = 'Comprador'
+        verbose_name_plural = 'Compradores'
+
+
+    def __str__(self):
+        return self.usuario.username
+
+###############################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Venta(models.Model):
     id: int
+ #   comprador = models.ForeignKey(Comprador, on_delete=models.DO_NOTHING, related_name='compras')
+
+    comprador = models.ForeignKey(Comprador, on_delete=models.DO_NOTHING, blank=True, null=True )
     vendedor = models.ForeignKey(Vendedor, on_delete=models.DO_NOTHING)
     producto = models.ForeignKey('producto.Producto', on_delete=models.DO_NOTHING)
     cantidad = models.DecimalField(
@@ -53,4 +102,6 @@ class Venta(models.Model):
 
         self.producto.disminuir_stock(self.cantidad)
         super().save(*args, **kwargs)
+
+
 
