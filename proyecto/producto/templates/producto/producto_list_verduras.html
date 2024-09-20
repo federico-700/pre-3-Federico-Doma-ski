@@ -2,7 +2,7 @@
 
 {% block header %}
 <h1 style="color:forestgreen; text-align: center;">
-    Productos: Lista de verduras1
+    Productos: Lista de verduras
 </h1>
 
 {% endblock header %}
@@ -28,9 +28,9 @@
                 <p>
                     {{ object }}
                     <a href="{% url 'producto:producto_detalle_verduras' object.id %}">Detalle</a>
-                    <a href="{% url 'producto:producto_beneficio_verduras' object.id %}">Beneficios1</a>
+                    <a href="{% url 'producto:producto_beneficio_verduras' object.id %}">Beneficios</a>
                     <a href="{% url 'producto:producto_update_verduras' object.id %}">Cambiar</a>
-                    <a href="{% url 'producto:producto_delete_verduras' object.id %}">Borrar1</a>
+                    <a href="{% url 'producto:producto_delete_verduras' object.id %}">Borrar</a>
 
                 </p>
             {% endif %}       
