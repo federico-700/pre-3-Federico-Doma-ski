@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+    Productos: Beneficios para la salud1
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+    <ul>
+            <li> Nombre: {{object.nombre_producto}} </li>
+            <div> Beneficios: {{object.beneficio_producto}} </div> 
+    </ul>
+
+    <button><a href="{% url 'producto:producto_list_verduras' %}">Volver</a></button>
+{% endblock main %}

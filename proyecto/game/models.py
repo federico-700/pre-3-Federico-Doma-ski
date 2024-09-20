@@ -13,7 +13,7 @@ class Game(models.Model):
 
     # Mostrar una cuenta regresiva de 3 segundos
     print("....sorteo....")
-    for i in range(3, 0, -1):
+    for i in range(1, 0, ):
         print(i)
         time.sleep(1)
 

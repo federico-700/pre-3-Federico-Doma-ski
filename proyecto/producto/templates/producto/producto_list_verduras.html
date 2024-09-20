@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+<h1 style="color:forestgreen; text-align: center;">
+    Productos: Lista de verduras1
+</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+
+
+
+
+<form action="{% url 'producto:producto_list' %}" method="get">
+    <input type="text" name="q" id=""  placeholder="buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+    <div>
+        {% for object in producto %}
+            {% if object.tipo_producto == 'VERDURA' %}
+
+                <p>
+                    {{ object }}
+                    <a href="{% url 'producto:producto_detalle_verduras' object.id %}">Detalle</a>
+                    <a href="{% url 'producto:producto_beneficio_verduras' object.id %}">Beneficios1</a>
+                    <a href="{% url 'producto:producto_update_verduras' object.id %}">Cambiar</a>
+                    <a href="{% url 'producto:producto_delete_verduras' object.id %}">Borrar1</a>
+
+                </p>
+            {% endif %}       
+        {% empty %}
+        <p>
+            No hay registro
+        </p>    
+        {% endfor %}
+    </div>
+    <button><a href="{% url 'producto:index_verduras' %}">Volver</a></button>
+{% endblock main %}
