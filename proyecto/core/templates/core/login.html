@@ -5,6 +5,7 @@
 
 <h1 
     style="color:forestgreen; text-align: center;">
+
     Login
 
 
@@ -20,25 +21,18 @@
 
 
 
+
 {% endblock header %}
 
-
-
-
-
 {% block main %}
-
-
-
-
-
-
     <form method="post">
         {% csrf_token %}
         <table>
             {{form.as_table}}
         <table>
         <button type="submit">Iniciar sesion</button>
+
+
 
         <a href="https://i.gifer.com/78nZ.gif">
             <img src="https://i.gifer.com/78nZ.gif" 
@@ -48,9 +42,14 @@
         
 
 
+
+
+
+
     </form>
 
     <p>¿No tienes una cuenta? <a href="{% url 'core:register' %}">Registrate aqui</a></p>
+
 
 
     <a href="https://i.gifer.com/origin/9f/9fc6a6f1ea0b47c9364f122c82e9a424_w200.webp">
@@ -61,7 +60,6 @@
     
 
 
+
+
 {% endblock main %}
-
-
-
