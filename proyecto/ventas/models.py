@@ -18,12 +18,7 @@ class Vendedor(models.Model):
         verbose_name_plural = 'Vendedores'
 
 
-
-
-
-
-
-######################33
+######################
 #prueba
 
 
@@ -42,26 +37,6 @@ class Comprador(models.Model):
         return self.usuario.username
 
 ###############################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class Venta(models.Model):
