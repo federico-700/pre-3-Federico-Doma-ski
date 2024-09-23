@@ -3,15 +3,17 @@
     <button><a href="{% url 'core:index' %}">🏡Home</a></button>
 
     {% if user.is_authenticated %}   
-        <button><a href="{% url 'frutas:index' %}">🍓Frutas_borrador</a></button>
-        <button><a href="{% url 'verduras:index' %}">🥦Verduras_borrador</a></button>
+{#      <button><a href="{% url 'frutas:index' %}">🍓Frutas_borrador</a></button>     #} 
+{#      <button><a href="{% url 'verduras:index' %}">🥦Verduras_borrador</a></button> #}
+
+        <button><a href="{% url 'producto:index' %}">🍎Frutas2</a></buton> 
+        <button><a href="{% url 'producto:index_verduras' %}">🥦Verduras2</a></button>
         <button><a href="{% url 'ofertas:index' %}">🍋Ofertas</a></button>
         <button><a href="{% url 'sucursales:index' %}">🍉Sucursales</a></buton>
-        <button><a href="{% url 'producto:index' %}">🍎Frutas2</a></buton>
- 
-        
-        
-        <button><a href="{% url 'producto:index_verduras' %}">🥦Verduras2</a></button>
+
+
+
+
         <button><a href="{% url 'game:index' %}">🎮Game</a></buton>
 
 
