@@ -6,6 +6,10 @@ from django.db import models
 from decimal import Decimal
 
 class Vendedor(models.Model):
+    """
+    Modelo que representa a un vendedor en la plataforma.
+    Cada vendedor está asociado a un usuario de Django (OneToOneField).
+    """
     usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name='vendedor')
     celular = models.CharField(max_length=50, blank=True, null=True)
     avatar = models.ImageField(upload_to='avatares', blank=True, null=True)
@@ -18,11 +22,14 @@ class Vendedor(models.Model):
         verbose_name_plural = 'Vendedores'
 
 
-######################
-#prueba
+###########################
 
 
 class Comprador(models.Model):
+    """
+    Modelo que representa a un comprador en la plataforma.
+    Cada comprador está asociado a un usuario de Django (OneToOneField).
+    """
     usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name='comprador')
     celular = models.CharField(max_length=50, blank=True, null=True)
     avatar = models.ImageField(upload_to='avatares', blank=True, null=True)
@@ -41,7 +48,18 @@ class Comprador(models.Model):
 
 class Venta(models.Model):
     id: int
- #   comprador = models.ForeignKey(Comprador, on_delete=models.DO_NOTHING, related_name='compras')
+    """
+    Modelo que representa una venta realizada en la plataforma.
+    Una venta está asociada a un comprador, un vendedor y un producto.
+    
+    Atributos:
+    - comprador: El comprador que realizó la compra (ForeignKey a Comprador).
+    - vendedor: El vendedor que vendió el producto (ForeignKey a Vendedor).
+    - producto: El producto que se vendió (ForeignKey a Producto).
+    - cantidad: La cantidad de producto vendida.
+    - precio_total: El precio total de la venta calculado automáticamente( si compra 10 o mas kilos obtiene un descuento del 20%)
+    - fecha_venta: Fecha en la que se realizó la venta (se asigna automáticamente).
+    """
 
     comprador = models.ForeignKey(Comprador, on_delete=models.DO_NOTHING, blank=True, null=True )
     vendedor = models.ForeignKey(Vendedor, on_delete=models.DO_NOTHING)

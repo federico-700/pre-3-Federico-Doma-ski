@@ -1,8 +1,13 @@
 from django.db import models
 
 class Producto(models.Model):
+    """
+    Modelo que representa un producto en la verdulería.
+    Los productos pueden ser frutas, verduras o estar en oferta.
+    Cada producto tiene un nombre, precio, stock y detalles opcionales.
+    """
     class Tipo_producto(models.TextChoices):
-        Fruta = "FRUTA", "Fruta"
+        FRUTA = "FRUTA", "Fruta"
         VERDURA = "VERDURA", "Verdura"
         OFERTA = "OFERTA", "Oferta"
     nombre_producto = models.CharField(max_length=100)

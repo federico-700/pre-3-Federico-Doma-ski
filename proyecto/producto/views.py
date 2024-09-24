@@ -8,16 +8,14 @@ from django.urls import reverse_lazy
 
 
 
-#***** INDEX
+#***** INDEX FRUTA
 
 def index(request):
     return render(request, 'producto/index.html')
 
 
 
-#***** NUEVA VERSION
-
-#***** LIST
+#***** LIST FRUTA
 def producto_list(request):
     query = request.GET.get('q')
     if query:
@@ -28,7 +26,7 @@ def producto_list(request):
     return render(request, 'producto/producto_list.html',contexto)
 
 
-# ***** UPDATE
+# ***** UPDATE 
 
 def producto_update(request,pk:int):
     query = Producto.objects.get(id=pk)
@@ -46,7 +44,7 @@ def producto_update(request,pk:int):
 
 
 
-#***** CREATE
+#***** CREATE 
 def producto_create(request):
     if request.method == 'GET':
         form= ProductoForm()
@@ -63,7 +61,7 @@ def producto_create(request):
 
 
 
-#***** PRODUCTO BENEFICIO  
+#***** PRODUCTO BENEFICIO 
 
 class ProductoBeneficio(DetailView):
     model = Producto
